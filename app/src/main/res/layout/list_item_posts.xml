@@ -31,9 +31,9 @@
             android:elevation="5dp"
             android:fontFamily="@font/psr"
             android:minHeight="40dp"
-            android:stateListAnimator="@null"
+            android:minWidth="120dp"
             android:textAllCaps="false"
-            tools:text="Leanne" />
+            tools:text="Leanne Graham" />
 
         <TextView
             android:id="@+id/tvTitle"
@@ -93,7 +93,6 @@
                 android:elevation="5dp"
                 android:fontFamily="@font/psr"
                 android:minHeight="30dp"
-                android:stateListAnimator="@null"
                 android:text="Comments"
                 android:textAllCaps="false" />
 
