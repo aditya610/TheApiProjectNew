@@ -1,6 +1,7 @@
 package com.blume.theapiproject
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.ContextMenu
@@ -10,7 +11,8 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.list_item_posts.view.*
 
 class PostsRecyclerView(val postsLists : ArrayList<PlaceHolderClass>,
-                        val usersLists : ArrayList<usersClass>) : RecyclerView.Adapter<PostsViewHolder>(){
+                        val usersLists : ArrayList<usersClass>,
+                        val context: Context) : RecyclerView.Adapter<PostsViewHolder>(){
 
     val positionalUserNames = HashMap<Int, String>()
 
@@ -39,6 +41,12 @@ class PostsRecyclerView(val postsLists : ArrayList<PlaceHolderClass>,
             holder.btnUserName.setText(btnName)
             holder.tvBody.text = postsLists[position].body
             holder.tvTitle.text = postsLists[position].title
+
+            holder.btnUserName.setOnClickListener{
+                val intent = Intent(context,Comments::class.java)
+                intent.putExtra("POSTID",postsLists[position].id)
+                context.startActivity(intent)
+            }
         }
 
     }

@@ -24,7 +24,7 @@ class Posts : AppCompatActivity() {
 
 
         rvPosts.layoutManager = LinearLayoutManager(this)
-        rvPosts.adapter = PostsRecyclerView(postsLists,usersLists)
+        rvPosts.adapter = PostsRecyclerView(postsLists,usersLists,this)
 
         PostsNetworkCall()
     }
