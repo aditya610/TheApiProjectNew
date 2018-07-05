@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:weightSum="2"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnPosts"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/ic_comment"
+            android:drawablePadding="-90dp"
+            android:paddingBottom="90dp"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:fontFamily="sans-serif-condensed"
+            android:text="POSTS"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/btnAlbums"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/ic_photo_library"
+            android:drawablePadding="-90dp"
+            android:paddingBottom="90dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Albums"
+            android:textSize="30dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnTodos"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/ic_todo"
+            android:drawablePadding="-90dp"
+            android:paddingBottom="90dp"
+            android:backgroundTint="@color/yellow"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Todos"
+            android:textSize="30dp" >
+
+        </Button>
+
+
+        <Button
+            android:id="@+id/btnUsers"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/ic_account"
+            android:drawablePadding="-90dp"
+            android:paddingBottom="90dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="sans-serif-condensed"
+            android:text="users"
+            android:textSize="30dp" />
+    </LinearLayout>
+</LinearLayout>
