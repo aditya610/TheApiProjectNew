@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".Posts" />
         <activity android:name=".Comments" />
-        <activity android:name=".Todos"></activity>
+        <activity android:name=".Todos" />
+        <activity android:name=".Users"></activity>
     </application>
 
 </manifest>
