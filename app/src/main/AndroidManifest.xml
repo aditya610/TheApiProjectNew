@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Posts" />
-        <activity android:name=".Comments"></activity>
+        <activity android:name=".Comments" />
+        <activity android:name=".Todos"></activity>
     </application>
 
 </manifest>

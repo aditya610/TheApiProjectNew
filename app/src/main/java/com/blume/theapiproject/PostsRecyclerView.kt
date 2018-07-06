@@ -42,9 +42,10 @@ class PostsRecyclerView(val postsLists : ArrayList<PlaceHolderClass>,
             holder.tvBody.text = postsLists[position].body
             holder.tvTitle.text = postsLists[position].title
 
-            holder.btnUserName.setOnClickListener{
+            holder.btnComments.setOnClickListener{
                 val intent = Intent(context,Comments::class.java)
                 intent.putExtra("POSTID",postsLists[position].id)
+                intent.putExtra("Name", holder.btnUserName.text)
                 context.startActivity(intent)
             }
         }
@@ -77,5 +78,6 @@ class PostsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     val btnUserName = itemView.btnUserName!!
     val tvTitle = itemView.tvTitle!!
     val tvBody = itemView.tvBody!!
+    val btnComments = itemView.btnComments!!
 
 }

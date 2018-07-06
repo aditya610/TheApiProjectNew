@@ -7,12 +7,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+
     <android.support.v7.widget.CardView
         app:cardElevation="5dp"
         app:cardCornerRadius="2dp"
         android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/progressBarCom"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="150dp"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:indeterminate="false"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -23,7 +33,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btnUserName"
+                android:id="@+id/CbtnUserName"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,7 +46,7 @@
                 tools:text="Leanne Graham" />
 
             <TextView
-                android:id="@+id/tvTitle"
+                android:id="@+id/CtvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -67,7 +77,7 @@
                 android:background="@android:color/holo_blue_dark" />
 
             <TextView
-                android:id="@+id/tvBody"
+                android:id="@+id/CtvBody"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/psr"
@@ -89,5 +99,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </android.support.v7.widget.RecyclerView>
+
+
     </LinearLayout>
+
+
+
 </FrameLayout>

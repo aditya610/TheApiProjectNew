@@ -15,6 +15,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Posts::class.java)
             startActivity(intent)
         }
+
+        btnTodos.setOnClickListener{
+            val intent = Intent(this, Todos::class.java)
+            intent.putExtra("Name", "Main")
+            startActivity(intent)
+        }
     }
 
 
