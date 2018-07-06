@@ -16,12 +16,13 @@ class Todos : AppCompatActivity() {
     val todosLists = ArrayList<TodoClass>()
     lateinit var sID :String
     lateinit var name :String
+    var id :Int =0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_todos)
 
         intent?.let {
-            val id = it.getIntExtra("USERID", 0)
+            id = it.getIntExtra("USERID", 0)
             name = it.getStringExtra("Name")
             sID= id.toString()
         }
@@ -33,13 +34,22 @@ class Todos : AppCompatActivity() {
 
     fun PostsNetworkCall()
     {
+        val custUrl :String
         progressBarTodo.visibility = View.VISIBLE
         progressBarTodo.setProgress(0)
         progressBarTodo.max = 2000
 
         val client = OkHttpClient()
+        if(id!=0)
+        {
+            custUrl = "https://jsonplaceholder.typicode.com/users/"+sID+"/todos"
+        }
+        else
+        {
+            custUrl= "https://jsonplaceholder.typicode.com/todos"
+        }
         val request = Request.Builder()
-                .url("https://jsonplaceholder.typicode.com/todos")
+                .url(custUrl)
                 .build()
 
         client.newCall(request).enqueue(object : Callback

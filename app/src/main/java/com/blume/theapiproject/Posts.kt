@@ -16,12 +16,20 @@ import java.lang.reflect.Type
 class Posts : AppCompatActivity() {
     val postsLists = ArrayList<PlaceHolderClass>()
     val usersLists = ArrayList<usersClass>()
+    lateinit var sID :String
+    lateinit var name :String
+    var id :Int = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_posts)
 
+        intent?.let {
+            id = it.getIntExtra("POSTID", 0)
+            name = it.getStringExtra("Name")
+            sID= id.toString()
+        }
 
         rvPosts.layoutManager = LinearLayoutManager(this)
         rvPosts.adapter = PostsRecyclerView(postsLists,usersLists,this)
@@ -31,13 +39,22 @@ class Posts : AppCompatActivity() {
 
     fun PostsNetworkCall()
     {
+        val custUrl : String
         progressBar.visibility = View.VISIBLE
         progressBar.setProgress(0)
         progressBar.max = 2000
 
         val client = OkHttpClient()
+        if(id!=0)
+        {
+            custUrl = "https://jsonplaceholder.typicode.com/users/"+sID+"/posts"
+        }
+        else
+        {
+            custUrl= "https://jsonplaceholder.typicode.com/posts"
+        }
         val request = Request.Builder()
-                .url("https://jsonplaceholder.typicode.com/posts")
+                .url(custUrl)
                 .build()
 
         client.newCall(request).enqueue(object :Callback
