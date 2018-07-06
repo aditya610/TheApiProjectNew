@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.blume.theapiproject">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -21,7 +21,9 @@
         <activity android:name=".Posts" />
         <activity android:name=".Comments" />
         <activity android:name=".Todos" />
-        <activity android:name=".Users"></activity>
+        <activity android:name=".Users" />
+        <activity android:name=".Albums" />
+        <activity android:name=".ImageView"></activity>
     </application>
 
 </manifest>
