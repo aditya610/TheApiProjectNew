@@ -38,7 +38,7 @@ class Albums : AppCompatActivity() {
         val request = Request.Builder()
                 .url("https://jsonplaceholder.typicode.com/albums")
                 .build()
-
+// hell o this is done by aditya
         client.newCall(request).enqueue(object : Callback
         {
             override fun onFailure(call: Call?, e: IOException?) {
